@@ -11,10 +11,10 @@ resource "aws_s3_bucket" "crl" {
   bucket = "certificate-revocation-list-${data.aws_caller_identity.current.account_id}"
 }
 
-resource "aws_s3_bucket_public_access_block" "crl" {
-  bucket = aws_s3_bucket.crl.id
-  restrict_public_buckets = false
-}
+#resource "aws_s3_bucket_public_access_block" "crl" {
+#  bucket = aws_s3_bucket.crl.id
+#  restrict_public_buckets = false
+#}
 
 resource "aws_s3_bucket_versioning" "crl" {
   bucket = aws_s3_bucket.crl.id
