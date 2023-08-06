@@ -15,7 +15,7 @@ resource "aws_acmpca_certificate_authority" "certificate_authority" {
     crl_configuration {
       custom_cname       = "crl.${var.subject["common_name"]}"
       enabled            = true
-      expiration_in_days = 7
+      expiration_in_days = 730
       s3_bucket_name     = aws_s3_bucket.crl.bucket
     }
   }
